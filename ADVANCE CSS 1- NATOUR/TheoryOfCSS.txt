@@ -1,0 +1,161 @@
+The Three Pillars of CSS:
+1. Responsive Design
+2. Maintaining and Scalable code
+3. Web Performance
+
+////////////////////////////////////////////////////////////////////////////
+Responsive Design: Fluid layouts, Media Queries, Responsive Images, Correct units,Desktop-first vs Mobile-first strategy.
+
+Maintainable and Scalable Code: Clean, Easy-to-understand, Growth, Reusable, How to organise files, How to name classes, How to structure HTML.
+
+Web Performance: Less HTTP request, Less Code, Compress Code, Use a CSS preprocessor, Less images, Compress images.
+///////////////////////////////////////////////////////////////////////////
+How CSS Works: A Behind the scenes
+
+Load HTML --> Parse HTML ------------> DOM(Document Object Model)
+
+Parse HTML ---> Load CSS ---> Parse CSS [ Resolving conflicting CSS declaration (cascade), Process final CSS values] ---> CSS Object Model(CSSOM) ---> Render Tree ---> Website rendring the visula formatting model
+
+CSS Terminology:
+       .my-class //Selector 
+       { 
+            color: blue;
+            text-align: center;          //all this are considered as declarartion
+            font-size: 20px;               block
+       }
+
+Cascade in CSS-> Process of Combining different stylesheets and resolving conflicts b/w different CSS rules and declarartions, when more than one rule applies to a certain element (Author CSS, User CSS, Browser(User Agent) CSS)
+
+Importance >> Specificity >> Source Order
+
+IMPORTANCE:
+1. User !important declaration
+2. Author !important declarartion
+3. Author declarartions
+4. User declarartions
+5. Default browser declarations
+
+SPECIFICITY:
+1. Inline styles
+2. IDs
+3. Classes, pseudo-classes, attribute
+4. Element, pseudo-elements
+
+SOURCE CODE:
+The last declarartion in the code will override all other declarartion and will be applied.
+
+POINTS TO KEEP IN MIND WHILE WRITITNG CSS:
+1. CSS declarartion marked with !important have highest priority but must be used as an last resort. It considered good practice to write code with correct Specificity.
+2. Inline styles will always have priority over styles in external stylesheets
+3. A selector that contains 1 ID is more specific than one with 1000 classes
+4. A selector that contains 1 class is more specific than one with 1000 elements
+5. The universal selector * has no specificity value (0,0,0,0)
+6. Rely more on specificity than on the order of selectors
+7. Always put your author stylesheet last.
+////////////////////////////////////////////////////////////////////////////////
+How CSS values are proceesesd
+
+Flow of Processing:
+Declared Value(author declarations) ---> Cascade Value(after the cascade) ---> specified Value(defaulting if there is no cascade value) ---> Computed Value(converting relative values to absolute) ---> Used Value(final calculations based on layout) ---> Actual Value(browser and device restrictions)
+
+How units are converted from relative to absolute(px):
+%(fonts) ---> font-size:150% ---> x% * (parent's computed font-size) ---> [150% * 16px = 24px]
+
+%(lengths) ---> padding: 10% ---> x% * (parent's computed width) ---> 100px 
+
+//em's uses parent size as a refenrence, but rem's uses root size as an reference 
+em(font) ---> font-size: 3em --->  x * (current element computed font-size) ---> 3*24=72
+
+em(lengths) ---> font-size: 2em --->  x * (current element computed font-size) ---> 2*24=48px
+
+rem ---> font-size: 10rem ---> x * (root computed font-size) ---> 10*16=160px
+
+vh(viewport-height) ---> 90vh ---> x * (1% of viewport-height) ---> 90% of current viewport height
+
+vw(viewport-width) ---> 90vw ---> x * (1% of viewport-width) ---> 90% of current viewport-width
+//////////////////////////////////////////////////////////////////////////////////
+Inheritance in CSS
+
+Every CSS property must have a value -----> Is there a cascade value ----> (yes) ---> specificed value=Cascade value  
+---> (No) Inherited property is available?---> Specified value= computed value of parent element
+
+Inheritance passes value of some specific properties from parents to children -- more maintainable code;
+Ex- properties related to text are inheriteds: font-family, font-size, color, etc.
+
+The Computed value of a property is what get inherited, not the declared value.
+Inheritance of a property only works if no one declares a value for the property.
+
+The 'inherit' keyword forces inheritance on a certain property.
+
+The inital keyword resets a property to its initial value.
+//////////////////////////////////////////////////////////////////////////////////
+The Visual Formatting Model
+
+Algorithm that calculates boxes and determines the layout of these boxes, for each element in the render tree, in order to determine the find layout of the page.
+1. Dimensions of boxes: the box model
+2. Box Type: inline, block and inline-block
+3. Positioning Scheme: floats and Positioning
+4. Stacking Context
+5. Other elements in the render tree
+6. viewport size, dimensions of images, etc.
+
+Box-Model: Heights and Widths
+total width = right border + right padding + specificed width + left padding + left border
+total height = top border + top padding + specified height + bottom padding + bottom border
+
+box-sizing: border-box
+total width= specified width 
+total height= specified height 
+
+Block-Level Boxes:
+1. Elements formatted visually as blocks
+2. 100% of parent's width
+3. Vertically, one after another
+4. Box-model applies as showed
+
+Inline Boxes:
+1. Content is distributed in lines 
+2. Occupies only content's space
+3. No line-breaks
+4. No heights and Widths
+5. Paddings and margins only horizontal (left and right)
+
+Inline-Block Boxes:
+1. A mix of block and inline
+2. Occupies only content's space
+3. No line-breaks 
+4. Box-model applies as showed
+
+
+Stacking Contexts:(Z-index mostly used)
+opacity, filter also do stacking contexts
+/////////////////////////////////////////////////////////////////////////////////
+CSS Architecture, Components and BEM
+Clean, Modular, Resusable, Ready for growth
+
+Think ---> Build ---> Architect
+
+Think(Component-Driven Design)
+1. Modular building blocks that make up interfaces
+2. Held together by the layout of the page
+3. Re-usable across a project and between different projects
+4. Independents, allowing us to use them anywhere on the page
+[ATOMIC DESIGN]
+
+Build (BEM: Block Element Modifier)
+Block: Standalone component that is meaningful on its own
+Element: part of a block that has no standalone meaning 
+Modifier: a different version of a block or an element
+
+Architect (The 7-1 pattern)
+7 different folders for partial Sass files, and 1 main Sass file to import all other files into a compiled CSS stylesheet
+The 7 Folders:
+1. base/
+2. componets/
+3. layouts/
+4. pages/
+5. themes/
+6. abstracts/
+7. vendors/
+///////////////////////////////////////////////////////////////////////////////////
+
