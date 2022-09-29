@@ -158,4 +158,31 @@ The 7 Folders:
 6. abstracts/
 7. vendors/
 ///////////////////////////////////////////////////////////////////////////////////
+SASS
+
+What is SASS?
+Sass is a CSS preprocessor, an extension if CSS that adds power and elegance to the basic language
+
+SASS SOURCE CODE ---(Sass Compiler)---> COMPILED CSS CODE
+
+Variables: for reusable values such as colors, font-size, spacing etc
+
+Nesting: to nest selectors inside one another, allowing us to write less code.
+
+Operators: for mathematical operations right inside of CSS.
+
+Partials and Imports: to wrtie CSS in different files and importing them all into one single file.
+
+Mixins: to write reusable pieces of CSS code.
+
+Functions: similar to mixins, with the difference that they produce a value that can than be used.
+
+Extends: to make different selectors inherit declarations that are common to all of them.
+
+Control Directives(Not Used In Real World Projects): for writing complex code using conditionals and loops.
+
+There are two types of syntax present in SASS:
+Sass syntax : Based on indentations
+SCSS syntax : Based on curly braces 
+(I am going to use SCSS syntax)
 
