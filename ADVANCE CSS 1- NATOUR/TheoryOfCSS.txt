@@ -186,3 +186,4 @@ Sass syntax : Based on indentations
 SCSS syntax : Based on curly braces 
 (I am going to use SCSS syntax)
 
+Package.json file tell us what kind of developer dependencies we are using
