@@ -1,0 +1,11 @@
+{
+  "name": "advance-css-1--natours",
+  "version": "1.0.0",
+  "description": "Advance CSS Project-1",
+  "main": "index.html",
+  "scripts": {
+    "compile:sass": "node-sass sass/style.scss css/style.css"
+  },
+  "author": "Divyajyoti",
+  "license": "ISC"
+}

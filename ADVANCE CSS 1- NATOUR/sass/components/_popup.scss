@@ -11,6 +11,12 @@
     visibility: hidden;
     transition: all .3s ease;
 
+    //Handling the portion css code which are not supported by other browsers it is basically a good practice to consider every scenario while developing in this case we handling for 'backdrop-filer'
+    @supports(-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba($color-black, .3);
+    }
 
     &__content {
         @include absCenter;
