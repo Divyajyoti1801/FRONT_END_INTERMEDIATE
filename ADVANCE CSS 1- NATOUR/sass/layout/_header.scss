@@ -19,7 +19,7 @@
   position: relative;
 
   //Making image responsive according to the pixel density of the media screen. Targeting resolution + conditional statement 
-  @media (min-resolution: 192dpi) and (min-width:37.5em),
+  @media only screen and (min-resolution: 192dpi) and (min-width:37.5em),
   (-webkit-min-device-pixel-ratio:2) and (min-width:37.5em) {
     background-image: linear-gradient(to right bottom,
         rgba($color-primary-light, 0.8),
@@ -27,7 +27,7 @@
       url(../img/hero.jpg);
   }
 
-  @media (min-resolution:125em) {
+  @media only screen and (min-resolution:125em) {
     background-image: linear-gradient(to right bottom,
         rgba($color-primary-light, 0.8),
         rgba($color-primary-dark, 0.8)),
