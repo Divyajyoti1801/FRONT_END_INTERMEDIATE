@@ -1,0 +1,9 @@
+FLEXBOX: 1-D Layout
+
+Flexbox is a new module in CSS3 that makes it easy to align elements to one another in different directions and orders.
+The main idea behind flexbox is to give the container the ability to expand and to shrink elements to best use all the available space.
+Flexbox replaces float layouts, using less, and more readable and logical code.
+
+/////////////////////////////////////////////////////////////////
+Site-Used in this project
+https://icomoon.io/ --> SVG Collection and API
